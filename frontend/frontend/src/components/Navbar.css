@@ -1,0 +1,122 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 1000;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid transparent;
+}
+
+.navbar.scrolled {
+  height: 70px;
+  background: rgba(5, 5, 5, 0.8);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.logo-icon {
+  color: var(--glow-blue);
+  width: 28px;
+  height: 28px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  font-size: 15px;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a.active-link {
+  color: var(--text-primary);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--glow-blue);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+  box-shadow: 0 0 10px var(--glow-blue);
+}
+
+.nav-links a:hover::after, .nav-links a.active-link::after {
+  width: 100%;
+}
+
+.btn-primary {
+  position: relative;
+  padding: 12px 24px;
+  background: rgba(30, 15, 0, 0.5);
+  border: 1px solid var(--glow-blue);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 15px;
+  font-weight: 600;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 140, 0, 0.2);
+}
+
+.btn-primary:hover {
+  background: rgba(255, 140, 0, 0.15);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 0 25px rgba(255, 140, 0, 0.4);
+}
+
+.btn-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 60%);
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.btn-primary:active .btn-glow {
+  transform: translate(-50%, -50%) scale(2);
+  opacity: 0.5;
+  transition: 0s;
+}
+
+.btn-text {
+  position: relative;
+  z-index: 1;
+}

@@ -1,0 +1,217 @@
+.coding-section {
+  padding: 120px 40px;
+  position: relative;
+}
+
+.coding-dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.coding-platforms {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.platform-card {
+  padding: 24px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.platform-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.platform-logo {
+  height: 24px;
+  object-fit: contain;
+}
+
+.platform-logo.inverted {
+  filter: invert(1);
+}
+
+.hr-logo {
+  width: 28px;
+  height: 28px;
+  background: #00ea64;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  border-radius: 4px;
+}
+
+.platform-name {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.platform-stats {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Circular Chart */
+.stat-circle {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.circular-chart {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  max-height: 250px;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.1);
+  stroke-width: 2.5;
+}
+
+.circle {
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  animation: progress 2s ease-out forwards;
+}
+
+.circular-chart.orange .circle {
+  stroke: #ffa116;
+}
+
+@keyframes progress {
+  0% { stroke-dasharray: 0 100; }
+}
+
+.circle-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.stat-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dot.easy { background: #00b8a3; box-shadow: 0 0 8px #00b8a3; }
+.dot.medium { background: #ffc01e; box-shadow: 0 0 8px #ffc01e; }
+.dot.hard { background: #ff375f; box-shadow: 0 0 8px #ff375f; }
+
+.hr-stats {
+  justify-content: flex-start;
+}
+
+.badge-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.hr-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.gold-badge { color: #ffd700; border: 1px solid rgba(255, 215, 0, 0.3); }
+.silver-badge { color: #c0c0c0; border: 1px solid rgba(192, 192, 192, 0.3); }
+
+.skill-graph-container {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.graph-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.graph-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.mock-graph {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+
+.chart-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.line-path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw-line 3s ease-out forwards;
+}
+
+@keyframes draw-line {
+  to { stroke-dashoffset: 0; }
+}
+
+.data-point {
+  transform-origin: center;
+}
+
+.data-point.pulse {
+  animation: data-pulse 2s infinite alternate;
+}
+
+@keyframes data-pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 140, 0, 0.4); }
+  100% { transform: scale(1.5); box-shadow: 0 0 0 10px rgba(255, 140, 0, 0); }
+}
+
+@media (max-width: 900px) {
+  .coding-dashboard {
+    grid-template-columns: 1fr;
+  }
+}

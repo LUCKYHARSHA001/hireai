@@ -1,0 +1,237 @@
+.placement-dashboard-container {
+  padding: 2rem;
+  padding-top: 100px;
+  min-height: 100vh;
+  position: relative;
+  z-index: 10;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.placement-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.placement-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(to right, #fff, var(--color-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.placement-profile-summary {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(10, 15, 26, 0.5);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  border: 1px solid var(--glass-border);
+}
+
+.placement-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-purple), var(--color-cyan));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #fff;
+}
+
+.placement-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+
+.p-dash-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Specific Card Layouts */
+.p-metric-card {
+  grid-column: span 3;
+  position: relative;
+  overflow: hidden;
+}
+
+.p-metric-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.p-metric-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.p-metric-sub {
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.p-metric-bg-icon {
+  position: absolute;
+  right: -10px;
+  bottom: -10px;
+  width: 80px;
+  height: 80px;
+  opacity: 0.05;
+}
+
+.chart-card {
+  grid-column: span 8;
+  min-height: 350px;
+}
+
+.recent-activity-card {
+  grid-column: span 4;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+/* Custom Scrollbar for activity list */
+.activity-list::-webkit-scrollbar {
+  width: 4px;
+}
+.activity-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.activity-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.activity-item:last-child {
+  border-bottom: none;
+}
+
+.activity-icon-wrap {
+  padding: 0.5rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.activity-content h4 {
+  font-size: 0.95rem;
+  color: #fff;
+  margin-bottom: 0.2rem;
+}
+
+.activity-content p {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.students-table-card {
+  grid-column: span 12;
+  overflow-x: auto;
+}
+
+.cyber-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.cyber-table th {
+  text-align: left;
+  padding: 1rem;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cyber-table td {
+  padding: 1rem;
+  color: #fff;
+  font-size: 0.9rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cyber-table tr {
+  transition: background-color 0.2s ease;
+}
+
+.cyber-table tr:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.status-ready {
+  background: rgba(31, 171, 120, 0.1);
+  color: var(--color-green);
+  border: 1px solid rgba(31, 171, 120, 0.2);
+}
+
+.status-review {
+  background: rgba(255, 152, 0, 0.1);
+  color: #ff9800;
+  border: 1px solid rgba(255, 152, 0, 0.2);
+}
+
+.status-incomplete {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-text-muted);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 1024px) {
+  .p-metric-card {
+    grid-column: span 6;
+  }
+  .chart-card, .recent-activity-card {
+    grid-column: span 12;
+  }
+}
+
+@media (max-width: 768px) {
+  .p-metric-card {
+    grid-column: span 12;
+  }
+}
